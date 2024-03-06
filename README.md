@@ -1,20 +1,56 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+ am i responisve img 
 
-Welcome Paddy Walsh,
+# [Find a Gardener]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Find a Gardener is a website that will provide a list of available gardeners and their respective services. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The users of the website will be able to find gardeners in their area and find more information about them.
+
+The other user of the website will be ther garndered themselves who had add, update or delete their information profile.
+
+### Live project
+
+Find the live project [here](placeholder)
+
+---
+
+## Table of Contents
+1. [**UX**](#ux)
+    - [**User Stories**](#user-stories)
+    - [**Design**](#design)
+        - [**Color Scheme**](#color-scheme)
+        - [**Imagery**](#imagery)
+        - [**Typography**](#typography)
+    - [**Wireframes**](#wireframes)
+    - [**Database Design**](#database-design)
+2. [**Features**](#features)
+    - [**Current Features**](#current-features)
+    - [**Planned Features**](#planned-features)
+3. [**Technologies Used**](#technologies-used)
+    - [**Development Technologies**](#development-technologies)
+    - [**Front-End Technologies**](#front-end-technologies)
+    - [**Back-End Technologies**](#back-end-technologies)
+    - [**Python Modules**](#python-modules)
+4. [**Testing**](#testing)
+    - [**Validation**](#validation)
+    - [**User Story Testing**](#user-story-testing)
+    - [**Evidence Of CRUD**](#evidence-of-crud)
+    - [**Compatibility**](#compatibility)
+    - [**Issues**](#issues)
+5. [**Deployment**](#deployment)
+    - [**Local Deployment**](#local-deployment)
+    - [**Remote Deployment**](#remote-deployment)
+6. [**Credits**](#credits)
+    - [**Code**](#code)
+    - [**Tools And Software**](#tools-and-software)
+---
+
+
+
+
+
 
 ## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
 
 To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
