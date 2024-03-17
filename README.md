@@ -1,5 +1,30 @@
  am i responisve img 
 
+
+on entering do cmd - pip3 install 'Flask-SQLAlchemy<3' psycopg2 sqlalchemy==1.4.46
+
+
+to add db - cmd - set_pg
+                - psql
+                - CREATE DATABASE 'name of database'
+                - \c 'name of database'
+                - \q
+
+                - python3 
+                - from 'name of database' import db
+                - db.create_all()
+
+ you can check by using following cmds
+                - psql -d 'name of database'
+                - \dt
+                - \q - to exit
+
+ dont forget to add - app.app_context().push() underneath app.confi in init file
+
+
+
+
+
 # [Find a Gardener]()
 
 Find a Gardener is a website that will provide a list of available gardeners and their respective services. 
