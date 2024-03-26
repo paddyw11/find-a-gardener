@@ -5,4 +5,14 @@ from findagardener.models import GardnerServiceAssociation, Service, Gardener, R
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("gardeners.html")
+
+
+@app.route("/services")
+def services():
+    return render_template("services.html")
+
+
+@app.route("/add_service", methods=["GET", "POST"])
+def add_service():
+    return render_template("add_service.html")

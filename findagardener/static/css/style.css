@@ -10,4 +10,13 @@ main {
 
 .fa-seedling {
     color: #007a56;
+    padding-right: 10px;
+}
+
+.dropdown-menu{
+    max-width: fit-content;
+}
+
+.navbar {
+    font-size:x-large
 }

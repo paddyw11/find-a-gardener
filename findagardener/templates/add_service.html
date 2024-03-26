@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="display-3 primary text-center">Add Service</h3>
+
+
+<div class="row card-panel primary">
+    <form class="col sm-12" method="POST" action ="{{ url_for('add_service') }}">
+        <!--service_name-->
+        <div class=" row mb-3">
+            <label for="service_name" class="form-label">Service Name</label>
+            <input type="text" class="form-control validate" id="service_name" name="service_name" minlength="3" maxlength="35" aria-describedby="serviceName" required>
+        </div>
+         <!--submit_button-->
+         <div class=" row mb-3 text-center">
+            <i class="fas fa-solid fa-tree"></i>
+            <label for="service_name" class="form-label">Service Name</label>
+            <input type="text" class="form-control validate" id="service_name" name="service_name" minlength="3" maxlength="35" aria-describedby="serviceName" required>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

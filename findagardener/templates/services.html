@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="display-3 primary text-center">Services</h3>
+
+
+<div class="row">
+    <div class="col-sm-8 col-lg-6 text-center"></div>
+    <a href="{{ url_for ('add_service') }}" class="btn btn-primary">
+        Add Service <i class="fas fa-square-plus"></i>
+    </a>
+</div>
+{% endblock %}
