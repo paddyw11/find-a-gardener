@@ -71,6 +71,68 @@ Find the live project [here](placeholder)
 ---
 
 
+#UX
+
+##User Stories
+
+###Design
+
+####Color Scheme
+
+####Imagery
+
+####Typography
+
+###Wireframes
+
+###Database Design
+
+#Features
+
+##Current Features
+
+##Planned Features
+
+#Technologies Used
+
+##Development Technologies
+
+##Front-End Technologies
+
+##Back-End Technologies
+
+##Python Modules
+
+#Testing
+
+##Validation
+
+##User Story Testing
+
+##Evidence Of CRUD
+
+##Compatibility
+
+##Issues
+
+#Deployment
+
+##Local Deployment
+
+##Remote Deployment
+
+#Credits
+
+-   
+
+##Code
+
+- Code Pen - Grass Footer [@Tillberger](https://codepen.io/tillberger/pen/MWqbWZJ)
+
+
+##Tools And Software
+
+
 
 
 
