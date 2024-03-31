@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, flash
 from findagardener import app, db
 from findagardener.models import GardenerServiceAssociation, Service, Gardener, Region
 #from findagardener.models import Category, Task
@@ -52,17 +52,26 @@ def add_gardener():
     services = list(Service.query.order_by(Service.service_name).all())
     regions = Region.query.all()
     if request.method == "POST":
-
         region_name = request.form.get("region")
-        region = Region.query.filter_by(region_name=region_name).first()
-        gardener = Gardener(
-            gardener_name=request.form.get("gardener_name"),
-            region=region,
-            services_offered=request.form.getlist("services_offered")
-        )
-        db.session.add(gardener)
-        db.session.commit()
-        return redirect(url_for("home"))
+        
+        if region_name:
+            region = Region.query.filter_by(region_name=region_name).first()
+
+            if region:
+                gardener = Gardener(
+                    gardener_name=request.form.get("gardener_name"),
+                    region=region,
+                    services_offered=request.form.getlist("services_offered")
+                )
+                db.session.add(gardener)
+                db.session.commit()
+                return redirect(url_for("home"))
+            else:
+                flash("Invalid region specified.")
+        else:
+            flash("Region is required.")
+
+    
     return render_template("add_gardener.html", services=services, regions=regions)
 
 
