@@ -52,9 +52,12 @@ def add_gardener():
     services = list(Service.query.order_by(Service.service_name).all())
     regions = Region.query.all()
     if request.method == "POST":
+
+        region_name = request.form.get("region")
+        region = Region.query.filter_by(region_name=region_name).first()
         gardener = Gardener(
             gardener_name=request.form.get("gardener_name"),
-            region=request.form.get("region.region_name",),
+            region=region,
             services_offered=request.form.getlist("services_offered")
         )
         db.session.add(gardener)
