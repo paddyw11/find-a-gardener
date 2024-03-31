@@ -77,6 +77,7 @@ def add_region():
             region_name=request.form.get("region_name")
         )
         db.session.add(region)
+        db.session.commit()
         return redirect(url_for("regions"))
     return render_template("add_region.html")
 
