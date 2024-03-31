@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="display-3 primary text-center">Add Region</h3>
+
+
+<div class="row card primary">
+    <form class="col sm-12" method="POST" action ="{{ url_for('add_region') }}">
+        <!--region_name-->
+        <div class=" row mb-3">
+            <label for="region_name" class="form-label">Region Name</label>
+            <input type="text" class="form-control validate" id="region_name" name="region_name" minlength="3" maxlength="35" aria-describedby="regionName" required>
+        </div>
+        <!--submit_button-->
+         <div class=" row mb-3 text-center primary">
+            <button type="submit" class="btn btn-lg btn-bs-success-bg-subtle">
+                Add Region <i class="fas fa-plus-square right"></i>  
+            </button>
+            
+        </div>
+    </form>
+</div>
+
+{% endblock %}
