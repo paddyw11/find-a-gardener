@@ -25,6 +25,9 @@
             <a class="navbar-brand" href="{{ url_for('home') }}"> <i class="fa-solid fa-seedling"></i>Find a Gardener</a>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ url_for('add_gardener') }}">Gardeners</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Search By Region</a>
               </li>
               <li class="nav-item">
@@ -36,7 +39,7 @@
                 </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('regions') }}">Regions</a></li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                   </ul>
               </li>
