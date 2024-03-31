@@ -79,3 +79,7 @@ main {
     text-align: center;
     z-index: 1;
 }
+
+.card_containter{
+    margin-top: 15px;
+}
