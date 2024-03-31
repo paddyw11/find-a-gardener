@@ -47,6 +47,13 @@ def delete_service(service_id):
     return redirect(url_for("services"))
 
 #gardener
+
+@app.route("/gardeners")
+def gardeners():
+    gardeners = list(Gardener.query.order_by(Gardener.gardener_name).all())
+    return render_template("gardeners.html", gardeners=gardeners)
+
+
 @app.route("/add_gardener", methods=["GET", "POST"])
 def add_gardener():
     services = list(Service.query.order_by(Service.service_name).all())
