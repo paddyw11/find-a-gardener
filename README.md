@@ -17,6 +17,7 @@ to add db - cmd - set_pg
  you can check by using following cmds
                 - psql -d 'name of database'
                 - \dt
+                - SELECT * FROM 'name of table'
                 - \q - to exit
 
  dont forget to add - app.app_context().push() underneath app.confi in init file
