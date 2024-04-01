@@ -57,12 +57,15 @@ def gardeners():
 @app.route("/add_gardener", methods=["GET", "POST"])
 def add_gardener():
     services = list(Service.query.order_by(Service.service_name).all())
-    regions = Region.query.all()
+    regions = list(Region.query.order_by(Region.region_name).all())
+    #regions = Region.query.all()
     if request.method == "POST":
         region_name = request.form.get("region")
-        
+        print("Selected Region:", region_name)
+
         if region_name:
             region = Region.query.filter_by(region_name=region_name).first()
+            print("Retrieved Region:", region)
 
             if region:
                 gardener = Gardener(
@@ -72,6 +75,8 @@ def add_gardener():
                 )
                 db.session.add(gardener)
                 db.session.commit()
+                print("Gardener added successfully")
+
                 return redirect(url_for("home"))
             else:
                 flash("Invalid region specified.")

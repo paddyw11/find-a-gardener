@@ -116,6 +116,7 @@ Find the live project [here](placeholder)
 
 ##Issues
 
+Region error in post add_gargener form. I realised form posts were not adding tot he database for the garderner base. I added some print statements to test how the form was functioning. Some print statemnts identified an issues at the point of identifying the selected region on the form. 
 #Deployment
 
 ##Local Deployment
