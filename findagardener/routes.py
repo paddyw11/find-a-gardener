@@ -76,7 +76,7 @@ def add_gardener():
         #adds a new gardener to the db
         gardener = Gardener(
             gardener_name=request.form.get("gardener_name"),
-            region=region,
+            region_id=request.form.get("region_id"),
             services_offered=request.form.getlist("services_offered")
         )
         db.session.add(gardener)
