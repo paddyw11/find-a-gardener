@@ -18,7 +18,15 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ gardener.gardener_name }}</h5>
-                    <a class="btn btn-primary" href="#" role="button">Edit</a>
+                    <p class="card-text">{{ gardener.region }}</p>
+                    <p class="card-text">
+                      <ul>
+                          {% for service in gardener.services_offered %}
+                              <li>{{ service }}</li>
+                          {% endfor %}
+                      </ul>
+                  </p>
+                    <a class="btn btn-primary" href="{{ url_for('edit_gardener', gardener_id=gardener.id) }}" role="button">Edit</a>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ gardener.id }}">
                         Delete
                       </button>
@@ -28,7 +36,7 @@
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to delete?</h1>
+                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to delete the profile for {{ url_for('gardener.gardener_name) }}?</h1>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-footer">
