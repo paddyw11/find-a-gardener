@@ -32,3 +32,9 @@ class Region(db.Model):
     # schema for the region model
     id = db.Column(db.Integer, primary_key=True)
     region_name = db.Column(db.String(50), unique=True, nullable=False)
+
+    def region_id(self):
+        return self.id
+
+    def __repr__(self):
+        return self.region_name

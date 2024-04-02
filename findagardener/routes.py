@@ -56,35 +56,38 @@ def gardeners():
 
 @app.route("/add_gardener", methods=["GET", "POST"])
 def add_gardener():
-    services = list(Service.query.order_by(Service.service_name).all())
-    regions = list(Region.query.order_by(Region.region_name).all())
-    #regions = Region.query.all()
-    if request.method == "POST":
-        region_name = request.form.get("region")
-        print("Selected Region:", region_name)
-
-        if region_name:
-            region = Region.query.filter_by(region_name=region_name).first()
-            print("Retrieved Region:", region)
-
-            if region:
-                gardener = Gardener(
-                    gardener_name=request.form.get("gardener_name"),
-                    region=region,
-                    services_offered=request.form.getlist("services_offered")
-                )
-                db.session.add(gardener)
-                db.session.commit()
-                print("Gardener added successfully")
-
-                return redirect(url_for("home"))
-            else:
-                flash("Invalid region specified.")
-        else:
-            flash("Region is required.")
-
+    services = Service.query.order_by(Service.service_name).all()
+    regions = Region.query.order_by(Region.region_name).all()
     
+    if request.method == "POST":
+        existing_gardener = \
+            Gardener.query.filter(Gardener.gardener_name==
+                                  request.form.get("gardener_name")).all()
+        if existing_gardener:
+            flash('A gardener with this name already exists!')
+            return redirect(url_for("add_gardener"))
+
+        # Get the region object based on the region name from the form
+        region_id = request.form.get("region_id")
+        region = Region.query.get(region_id)
+        print("Selected Region:", region_id)  
+
+              
+        #adds a new gardener to the db
+        gardener = Gardener(
+            gardener_name=request.form.get("gardener_name"),
+            region=region,
+            services_offered=request.form.getlist("services_offered")
+        )
+        db.session.add(gardener)
+        db.session.commit()
+        flash("Gardener added successfully")
+        print("Gardener added successfully") 
+        return redirect(url_for("gardeners"))
+
+
     return render_template("add_gardener.html", services=services, regions=regions)
+
 
 
 #region code
