@@ -1,14 +1,15 @@
 from findagardener import db
 
-class GardenerServiceAssociation(db.Model):
-    # schema for the association model
-    gardener_id = db.Column(db.Integer, db.ForeignKey('gardener.id'), primary_key=True)
-    service_id = db.Column(db.Integer, db.ForeignKey('service.id'), primary_key=True)
+# schema for the association model
+GardenerServiceAssociation = db.Table('gardener_service_association',
+                                            db.Column('gardener_id', db.Integer, db.ForeignKey('gardener.id'), primary_key=True),
+                                            db.Column('service_id', db.Integer, db.ForeignKey('service.id'), primary_key=True)
+                                            )
 
 class Service(db.Model):
     # schema for the Service model
     id = db.Column(db.Integer, primary_key=True)
-    service_name = db.Column(db.String(25), unique=True, nullable=False)
+    service_name = db.Column(db.String(50), unique=True, nullable=False)
     service_description = db.Column(db.Text, nullable=False)
     price = db.Column(db.Integer)
 
@@ -21,7 +22,7 @@ class Gardener(db.Model):
     gardener_name = db.Column(db.String(50), unique=True, nullable=False)
     region_id = db.Column(db.Integer, db.ForeignKey("region.id"), nullable=False)
     region = db.relationship("Region", backref=db.backref("gardener", lazy=True))
-    services_offered = db.relationship("Service", secondary='gardener_service_association')
+    services_offered = db.relationship("Service", secondary='gardener_service_association', backref='gardeners')
 
     def __repr__(self):
         return "#{0} - Gardener: {1} | Region: {2}".format(
