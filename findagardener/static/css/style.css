@@ -83,3 +83,11 @@ main {
 .card_containter{
     margin-top: 15px;
 }
+
+#flash-msgs {
+    font-family: 'Cabin', sans-serif;
+    font-size: medium;
+    height: 30px;
+    margin: 0 auto;
+    background-color: #006b20;
+}
