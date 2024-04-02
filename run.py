@@ -1,5 +1,6 @@
 import os
-from findagardener import app
+from findagardener import app, db
+
 
 if __name__ == "__main__":
     app.run(
