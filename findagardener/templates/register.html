@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <h3 class="display-3 primary text-center" aria-hidden="true">Register</h3>
+
+  <div class="card_container container row card">
+      
+        <form class="col col-s-12" method="POST" action="{{ url_for('register') }}"></form>
+          <h5 class="card-title">Login</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <div class="input mb-3">
+            <i class="fas fa-user-plus prefix"></i>
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" name="username" class="form-control validate" placeholder="Username" aria-label="Username1" aria-describedby="basic-addon1">
+            
+          </div>
+          <div class="input mb-3">
+            <i class="fas fa-user-lock prefix"></i>
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-control validate" placeholder="Password123">
+          </div>
+          <!--Register-->
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="submit" class="btn btn-xs btn-primary ">
+              Register <i class="fas fa-sign-in-alt"></i>
+            </button>
+
+
+          </div>
+        </form>
+      
+    </div>
+
+
+
+  {% endblock %}

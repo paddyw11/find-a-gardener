@@ -2,6 +2,8 @@ from flask import render_template, request, redirect, url_for, flash
 from findagardener import app, db
 from findagardener.models import GardenerServiceAssociation, Service, Gardener, Region
 
+from werkzeug.security import generate_password_hash, check_password_hash
+
 #db.drop_all()
 db.create_all()
 
@@ -11,6 +13,14 @@ db.create_all()
 def home():
     return render_template("gardeners.html")
 
+#register 
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+#    if request.method == "POST":
+#        #check if username already exists in db
+ #   existing_user =
+    return render_template("register.html")
 
 @app.route("/services")
 def services():
@@ -105,14 +115,17 @@ def add_gardener():
 @app.route("/edit_gardener/<int:gardener_id>", methods=["GET", "POST"])
 def edit_gardener(gardener_id):
     gardener = Gardener.query.get_or_404(gardener_id)
+    regions = Region.query.order_by(Region.region_name).all()
+    services = Service.query.order_by(Service.service_name).all()
     if request.method == "POST":
         gardener_name = request.form.get("gardener_name")
         region_id = int(request.form.get("region_id"))
         services_offered = [int(service_id) for service_id in request.form.getlist("services_offered")]
         
         db.session.commit()
-        return redirect(url_for("gardener"))
-    return render_template("add_gardener.html", services=services, regions=regions)
+        return redirect(url_for("gardeners"))
+        
+    return render_template("edit_gardener.html", services=services, regions=regions, gardener=gardener)
 
 @app.route("/delete_gardener/<int:gardener_id>")
 def delete_gardener(gardener_id):
