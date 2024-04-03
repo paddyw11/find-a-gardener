@@ -3,6 +3,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Gafata', sans-serif;
+    cursor: url('../images/wateringcan.cur') !important;
 }
 
 main {
@@ -39,9 +40,38 @@ main {
 }
 
 .navbar {
-    font-size:x-large
+    font-size:x-large;
 }
 
+.nav-item {
+    position: relative; /* Ensure relative positioning for pseudo-element */
+}
+
+.nav-item::after {
+    content: "";
+    width: 0;
+    height: 6px;
+    background: hsl(113, 100%, 9%);
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    
+}
+
+/* Apply animation to the first navigation item */
+.nav-item:nth-child(1):hover::after {
+    width: 100%;
+}
+
+/* Apply animation to the second navigation item */
+.nav-item:nth-child(2):hover::after {
+    width: 100%;
+}
+
+/* Apply animation to the third navigation item */
+.nav-item:nth-child(3):hover::after {
+    width: 100%;
+}
 * {
     box-sizing: border-box;
 }
