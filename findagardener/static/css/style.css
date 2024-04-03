@@ -110,8 +110,9 @@ main {
     z-index: 1;
 }
 
-.card_containter{
+button {
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 #flash-msgs {
