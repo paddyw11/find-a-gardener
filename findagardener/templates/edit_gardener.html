@@ -22,7 +22,7 @@
         </div> 
         <!--services offered-->
         <div class=" row mb-3">
-            <label for="services_offered" class="form-label">Service Offered</label>
+            <label for="services_offered" class="form-label">Service(s) Offered</label>
             <select name="services_offered" class="form-select" multiple>
                 {% for service in services %}
                 <option value="{{ service.id }}">{{ service.service_name }}</option>
