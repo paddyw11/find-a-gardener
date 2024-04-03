@@ -2,8 +2,8 @@ from findagardener import db
 
 # schema for the association model
 GardenerServiceAssociation = db.Table('gardener_service_association',
-                                            db.Column('gardener_id', db.Integer, db.ForeignKey('gardener.id'), primary_key=True),
-                                            db.Column('service_id', db.Integer, db.ForeignKey('service.id'), primary_key=True)
+                                            db.Column('gardener_id', db.Integer, db.ForeignKey('gardener.id', ondelete="CASCADE"), primary_key=True),
+                                            db.Column('service_id', db.Integer, db.ForeignKey('service.id', ondelete="CASCADE"), primary_key=True)
                                             )
 
 class Service(db.Model):
@@ -20,8 +20,8 @@ class Gardener(db.Model):
     # schema for the Gardener model
     id = db.Column(db.Integer, primary_key=True)
     gardener_name = db.Column(db.String(50), unique=True, nullable=False)
-    region_id = db.Column(db.Integer, db.ForeignKey("region.id"), nullable=False)
-    region = db.relationship("Region", backref=db.backref("gardener", lazy=True))
+    region_id = db.Column(db.Integer, db.ForeignKey("region.id", ondelete="CASCADE"), nullable=False)
+    region = db.relationship("Region", backref=db.backref("gardener"), lazy=True)
     services_offered = db.relationship("Service", secondary='gardener_service_association', backref='gardeners')
 
     def __repr__(self):

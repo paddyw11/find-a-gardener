@@ -102,6 +102,25 @@ def add_gardener():
     return render_template("add_gardener.html", services=services, regions=regions)
     
 
+@app.route("/edit_gardener/<int:gardener_id>", methods=["GET", "POST"])
+def edit_gardener(gardener_id):
+    gardener = Gardener.query.get_or_404(gardener_id)
+    if request.method == "POST":
+        gardener_name = request.form.get("gardener_name")
+        region_id = int(request.form.get("region_id"))
+        services_offered = [int(service_id) for service_id in request.form.getlist("services_offered")]
+        
+        db.session.commit()
+        return redirect(url_for("gardener"))
+    return render_template("add_gardener.html", services=services, regions=regions)
+
+@app.route("/delete_gardener/<int:gardener_id>")
+def delete_gardener(gardener_id):
+    gardener = Gardener.query.get_or_404(gardener_id)
+    db.session.delete(gardener)
+    db.session.commit()
+    return redirect(url_for("gardeners"))
+
 #region code
 @app.route("/region")
 def regions():
@@ -136,4 +155,4 @@ def delete_region(region_id):
     region = Region.query.get_or_404(region_id)
     db.session.delete(region)
     db.session.commit()
-    return redirect(url_for("regions.html"))
+    return redirect(url_for("regions"))

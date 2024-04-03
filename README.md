@@ -11,11 +11,11 @@ to add db - cmd - set_pg
                 - \q
 
                 - python3 
-                - from 'name of database' import db
+                - from findagardener import db
                 - db.create_all()
 
  you can check by using following cmds
-                - psql -d 'name of database'
+                - psql -d findagardener
                 - \dt
                 - SELECT * FROM 'name of table'
                 - \q - to exit
