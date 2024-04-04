@@ -39,6 +39,8 @@ class Gardener(db.Model):
         "gardener"), lazy=True)
     services_offered = db.relationship("Service", \
          secondary='gardener_service_association', backref='gardeners')
+    created_by = db.Column(db.Text, db.ForeignKey(
+        "users.username", ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
         return "#{0} - Gardener: {1} | Region: {2}".format(

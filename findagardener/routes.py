@@ -12,7 +12,7 @@ db.create_all()
 
 @app.route("/")
 def home():
-    return render_template("gardeners.html")
+    return render_template("base.html")
 
 #register 
 
@@ -83,8 +83,8 @@ def profile(username):
         Checks if the user is logged in, retrieves their username
         and displays their profile
         """
-        # gardeners = list(Gardener.query.order_by(Gardener.gardener_name).all())
-        return render_template("profile.html", username=session["user"])
+        gardeners = list(Gardener.query.order_by(Gardener.gardener_name).all())
+        return render_template("profile.html", username=session["user"], gardeners=gardeners)
     
     else:
         return redirect(url_for("login"))
@@ -160,6 +160,7 @@ def add_gardener():
         services_offered = [
             int(service_id) for service_id in \
                  request.form.getlist("services_offered")]
+        created_by = session.get("user")
 
          # Check if gardener with the same name already exists
         existing_gardener = Gardener.query.filter_by(
@@ -178,7 +179,8 @@ def add_gardener():
         gardener = Gardener(
             gardener_name=gardener_name,
             region=region,
-            services_offered=services
+            services_offered=services,
+            created_by=created_by
         )
 
         db.session.add(gardener)

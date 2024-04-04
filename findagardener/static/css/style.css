@@ -1,3 +1,21 @@
+@import "../node_modules/bootstrap/scss/variables";
+
+
+.btn-primary {
+        color: #fff; 
+        background-color: #006b20;
+        border-color: #006b20;
+}
+
+.btn-primary:hover {
+    color: #fff; 
+    background-color: #006b20;
+    border-color: #006b20;
+}
+    
+
+
+
 body {
     display: flex;
     min-height: 100vh;
@@ -31,7 +49,7 @@ main {
 }
 
 .fa-seedling {
-    color: #007a56;
+    color: #006b20;
     padding-right: 10px;
 }
 
@@ -51,7 +69,7 @@ main {
     content: "";
     width: 0;
     height: 6px;
-    background: hsl(113, 100%, 9%);
+    background: #006b20;
     position: absolute;
     bottom: -8px;
     left: 0;
@@ -117,8 +135,31 @@ button {
 
 #flash-msgs {
     font-family: 'Cabin', sans-serif;
-    font-size: medium;
-    height: 30px;
+    font-size: large;
+    height: 35px;
     margin: 0 auto;
     background-color: #006b20;
+    color: #fff;
+}
+
+.flashes h4 {
+    line-height: 2;
+}
+
+.region-card {
+    width: 13rem;
+    height: 7rem;
+    background-color: #006b20;
+    border: 3px solid #006b20;
+    font-family: 'Varela Round', sans-serif;
+    border-radius: 25px;
+}
+
+.service-card {
+    width: 13rem;
+    height: 7rem;
+    background-color: #006b20;
+    border: 3px solid #006b20;
+    font-family: 'Varela Round', sans-serif;
+    border-radius: 25px;
 }
