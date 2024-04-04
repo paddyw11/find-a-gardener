@@ -1,11 +1,16 @@
 from findagardener import db
 
 
-#class users(db.model):
-    #scheme for the users model
-    #id = db.Column(db.Integer, primary_key-True)
-    #username =db.Column
+class Users(db.Model):
+    #schema for the users model
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(500), unique=True, nullable=False)
 
+    def __repr__(self):
+        # __repr__ to represent itself in the form of a string
+        return "#{0} - username: {1} | password: {2}".format(
+            self.username, self.password)
 
 # schema for the association model
 GardenerServiceAssociation = db.Table('gardener_service_association',
@@ -26,7 +31,6 @@ class Service(db.Model):
 class Gardener(db.Model):
     # schema for the Gardener model
     id = db.Column(db.Integer, primary_key=True)
-    username
     gardener_name = db.Column(db.String(50), unique=True, nullable=False)
     region_id = db.Column(db.Integer, db.ForeignKey("region.id", ondelete="CASCADE"), nullable=False)
     region = db.relationship("Region", backref=db.backref("gardener"), lazy=True)
