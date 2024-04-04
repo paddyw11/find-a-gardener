@@ -24,11 +24,13 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand" href="{{ url_for('home') }}"> <i class="fa-solid fa-seedling"></i>Find a Gardener</a>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ url_for('gardeners') }}">Gardeners</a>
+                <a class="nav-link active" aria-current="page" href="{{ url_for('gardeners') }}"> All gardeners</a>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Search By Region</a>
+                <a class="nav-link active" aria-current="page" href="{{ url_for('gardeners_by_region') }}">Search By Region</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ url_for('services') }}">Search By Service</a>
@@ -38,11 +40,20 @@
                   <i class="bi bi-person-circle"></i>
                 </a>
                   <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="{{ url_for('register') }}">Register</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a class="dropdown-item" href="#">Log Out</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('regions') }}">Regions</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    
+                    
+                    {% if session.user %}
+                      <li><a class="dropdown-item" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                      <li><a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% else %}
+                      <li><a class="dropdown-item" href="{{ url_for('login') }}">Log In</a></li>
+                      <li><a class="dropdown-item" href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
+                    
+                    {% if session.user == 'admin1' %}
+                      <li><a class="dropdown-item" href="{{ url_for('regions') }}">Regions</a></li>
+                      <li><a class="dropdown-item" href="{{ url_for('gardeners') }}">Manage Gardeners</a></li>
+                    {% endif %}
                   </ul>
               </li>
             </ul>
