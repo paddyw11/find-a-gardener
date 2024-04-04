@@ -1,18 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
-
-    
-    <div class="card_container user-form container row card">
-        
-      <h3 class="display-3 primary text-center" aria-hidden="true">{{ username }}'s Profile</h3>
-    </div>
-       <br>
-    <div class="row justify-content-md-3">
-      <div class="col-md-3 text-center"></div>
-      <a href="{{ url_for ('add_gardener') }}" class="btn btn-primary btn-lg">
-          Add your gardener profile <i class="fas fa-square-plus"></i>
-      </a>
+  <div class="card_container user-form container row card">
+    <h3 class="display-3 primary text-center" aria-hidden="true">{{ username }}'s Profile</h3>
+  </div>
+  <br>
+  <div class="row justify-content-md-3">
+    <div class="col-md-3 text-center"></div>
+    <a href="{{ url_for ('add_gardener') }}" class="btn btn-primary btn-lg">
+      Add your gardener profile <i class="fas fa-square-plus"></i>
+    </a>
   </div>
   
-
-  {% endblock %}
+  <div class="container text-center card_containter">
+    <div class="row">
+      {% for gardener in gardeners %}
+        {% if gardener.created_by == session.user or session.user == 'admin1' %}
+          <div class="col col-sm-8 col-md-3 col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ gardener.gardener_name }}</h5>
+                <p class="card-text">{{ gardener.region }}</p>
+                <p class="card-text">
+                  {% for service in gardener.services_offered %}
+                    {{ service }}<br>
+                  {% endfor %}
+                </p>
+                {% if session.user == 'admin1' or gardener.created_by == session.user %}
+                  <a class="btn btn-primary" href="{{ url_for('edit_gardener', gardener_id=gardener.id) }}" role="button">Edit</a>
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ gardener.id }}">
+                    Delete
+                  </button>
+                {% endif %} 
+                <!-- modal-->
+                <div class="modal fade" id="staticBackdrop-{{ gardener.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to delete the profile?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, take me back to safety</button>
+                        <a href="{{ url_for('delete_gardener', gardener_id=gardener.id) }}" class="btn btn-danger" >Yes, delete it!</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
