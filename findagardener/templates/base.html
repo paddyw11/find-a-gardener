@@ -39,7 +39,7 @@
                 </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="{{ url_for('register') }}">Register</a></li>
-                    <li><a class="dropdown-item" href="#">Log In</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('login') }}">Log In</a></li>
                     <li><a class="dropdown-item" href="#">Log Out</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('regions') }}">Regions</a></li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -50,6 +50,22 @@
         </div>
       </nav>
   </header>
+
+  <section>
+    <!-- Flash messages -->
+<div id="page-container" class="mt-0"><div id="content-container" class="w-100 mt-0">
+  <div id="flash-msgs" class="text-center">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes p-1">
+          <p>{{ message }}</p>
+        </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+      </div>
+  </section>
   <main class="container">
     {% block content %}
     {% endblock %}
