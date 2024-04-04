@@ -206,6 +206,9 @@ def edit_gardener(gardener_id):
         services_offered = [int(service_id) for service_id \
              in request.form.getlist("services_offered")]
         
+        gardener.gardener_name = gardener_name
+        gardener.region_id = region_id
+        gardener.services_offered = Service.query.filter(Service.id.in_(services_offered)).all()
         db.session.commit()
         return redirect(url_for("gardeners"))
         
@@ -256,15 +259,38 @@ def delete_region(region_id):
     return redirect(url_for("regions"))
 
 
-@app.route("/gardeners_by_region", methods=["GET", "POST"])
-def gardeners_by_region():
+#@app.route("/gardeners_by_region", methods=["GET", "POST"])
+#def gardeners_by_region():
     
-    regions = Region.query.order_by(Region.region_name).all()
-    selected_region_id = request.form.get("region_id")
-    gardener = []
+    #regions = Region.query.order_by(Region.region_name).all()
+    #selected_region_id = request.form.get("region_id")
+   # gardener = []
 
-    if selected_region_id:
-        selected_region_id = int(selected_region_id)
-        gardeners = Gardener.query.join(Gardener).join(Region).filter(Region.id == selected_region_id).all()
+    #if selected_region_id:
+   #     selected_region_id = int(selected_region_id)
+   #     gardeners = Gardener.query.join(Gardener).join(Region).filter(Region.id == selected_region_id).all()
 
-    return render_template("gardeners_by_region.html", regions=regions, gardener=gardener)
+    #return render_template("gardeners_by_region.html", regions=regions, gardener=gardener)
+
+
+@app.route("/gardeners_by_region/<int:region_id>")
+def gardeners_by_region(region_id):
+    # Displays the gardeners for the selected region
+    gardeners = list(Gardener.query.order_by(Gardener.gardener_name).all())
+    region = Region.query.get_or_404(region_id)
+    return render_template("gardeners_by_region.html",
+                           region=region, gardeners=gardeners,
+                           regions=regions)
+
+
+@app.route("/gardeners_by_service/<int:service_id>")
+def gardeners_by_service(service_id):
+    # Displays the gardeners for the selected service
+    gardeners = Gardener.query.filter(Gardener.services_offered.any(id=service_id)).all()
+    service = Service.query.get_or_404(service_id)
+    return render_template("gardeners_by_service.html",
+                           service=service, gardeners=gardeners,
+                           services_offered=services)
+
+
+
