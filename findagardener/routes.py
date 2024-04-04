@@ -78,18 +78,27 @@ def profile(username):
     A function that displays the user's gardener profile 
     they have created
     """
-    gardeners = list(Gardener.query.order_by(Gardener.gardener_name).all())
-    return render_template("profile.html", username=username)
-    
     if "user" in session:
         """
         Checks if the user is logged in, retrieves their username
         and displays their profile
         """
-        return render_template("profile.html", username=session["user"],
-                               gardeners=gardeners)
+        # gardeners = list(Gardener.query.order_by(Gardener.gardener_name).all())
+        return render_template("profile.html", username=session["user"])
+    
     else:
         return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    """
+    Function that clears the session data to log the user out
+    and redirect to the log in page
+    """
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 @app.route("/services")
@@ -245,3 +254,17 @@ def delete_region(region_id):
     db.session.delete(region)
     db.session.commit()
     return redirect(url_for("regions"))
+
+
+@app.route("/gardeners_by_region", methods=["GET", "POST"])
+def gardeners_by_region():
+    
+    regions = Region.query.order_by(Region.region_name).all()
+    selected_region_id = request.form.get("region_id")
+    gardener = []
+
+    if selected_region_id:
+        selected_region_id = int(selected_region_id)
+        gardeners = Gardener.query.join(Gardener).join(Region).filter(Region.id == selected_region_id).all()
+
+    return render_template("gardeners_by_region.html", regions=regions, gardener=gardener)
