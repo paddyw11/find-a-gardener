@@ -21,8 +21,9 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          <div class="navbar-brand"> <i class="fa-solid fa-seedling"></i>Find a Gardener</div>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <div class="navbar-brand"> <i class="fa-solid fa-seedling"></i>Find a Gardener</div>
+            
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               {% if not session.user %}
                 <li class="nav-item">
@@ -95,19 +96,8 @@
     {% block content %}
     {% endblock %}
     
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-6">
-          <img src="/findagardener/static/images/rake.webp" class="img-fluid" alt="Placeholder Image">
-        </div>
-        <div class="col-md-6">
-          <h2 class="mb-4">Welcome to Find A Gardener</h2>
-          <p>Welcome to our 'Find a Gardener' platform, where your gardening needs meet skilled professionals. Whether you're looking to transform your backyard oasis, maintain a pristine lawn, or cultivate a flourishing garden, our website connects you with experienced gardeners tailored to your specific needs. With our intuitive search functionality, you can easily locate gardeners based on your desired region and the services they offer. Explore our extensive network of gardening experts and embark on a journey to elevate your outdoor space to new heights of beauty and tranquillity.</p>
-        </div>
-      </div>
-    </div>
-
   </main>
+  
   <footer class= "footer">
     
     <div class="background">
