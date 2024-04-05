@@ -3,18 +3,15 @@
 
 .btn-primary {
         color: #fff; 
-        background-color: #006b20;
-        border-color: #006b20;
+        background-color: #386641;
+        border-color: #386641;
 }
 
 .btn-primary:hover {
     color: #fff; 
-    background-color: #006b20;
-    border-color: #006b20;
+    background-color: #386641;
+    border-color: #386641;
 }
-    
-
-
 
 body {
     display: flex;
@@ -22,6 +19,7 @@ body {
     flex-direction: column;
     font-family: 'Gafata', sans-serif;
     cursor: url('../images/wateringcan.cur') !important;
+    margin-bottom: 100px;
 }
 
 main {
@@ -31,8 +29,6 @@ main {
 html, body {
     min-height: 100%;
     padding: 0px;
-    margin: 0px;
-
 }
 
 main {
@@ -62,14 +58,15 @@ main {
 }
 
 .nav-item {
-    position: relative; /* Ensure relative positioning for pseudo-element */
+    position: relative;
+    margin-right: 20px; /* Ensure relative positioning for pseudo-element */
 }
 
 .nav-item::after {
     content: "";
     width: 0;
     height: 6px;
-    background: #006b20;
+    background: #386641;
     position: absolute;
     bottom: -8px;
     left: 0;
@@ -116,6 +113,8 @@ main {
 
 .footer {
     position: relative;
+    bottom: 0;
+    width: 100%;
 }
 .overlay-text {
     position: absolute;
@@ -126,19 +125,28 @@ main {
     font-weight: 600;
     text-align: center;
     z-index: 1;
+    background-color: rgba(255,255,255,.5);
+    border-radius: 10px;
+    padding-left:10px;
+    padding-right:10px;
+
 }
 
 button {
     margin-top: 15px;
     margin-bottom: 15px;
+    color: #fff;
 }
 
+.btn-danger{
+    background-color: #BC4749;
+}
 #flash-msgs {
     font-family: 'Cabin', sans-serif;
     font-size: large;
     height: 35px;
     margin: 0 auto;
-    background-color: #006b20;
+    background-color: #386641;
     color: #fff;
 }
 
@@ -147,19 +155,64 @@ button {
 }
 
 .region-card {
-    width: 13rem;
-    height: 7rem;
-    background-color: #006b20;
-    border: 3px solid #006b20;
-    font-family: 'Varela Round', sans-serif;
+    width: 20rem;
+    min-height: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border: 2px solid #386641; 
     border-radius: 25px;
+    font-family: 'Varela Round', sans-serif;
+    color: #13245D;
+    background-color: #F2E8CF;
+    overflow: hidden;
+}
+
+.region-card a{
+    color: #006b20 
+}
+
+.region-card .btn-primary{
+    color: #ffffff 
 }
 
 .service-card {
-    width: 13rem;
-    height: 7rem;
-    background-color: #006b20;
-    border: 3px solid #006b20;
-    font-family: 'Varela Round', sans-serif;
+    width: 20rem;
+    min-height: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border: 2px solid #386641; 
     border-radius: 25px;
+    font-family: 'Varela Round', sans-serif;
+    color: #13245D;
+    background-color: #F2E8CF;
+    overflow: hidden;
+    text-align: left;
 }
+
+.service-card a{
+    color: #006b20 
+}
+
+.service-card .btn-primary{
+    color: #ffffff 
+}
+
+
+.gardener-card {
+    width: 20rem;
+    min-height: auto;
+    margin-top: 30px;
+    margin-bottom: 1rem;
+    border: 2px solid #386641; 
+    border-radius: 25px;
+    font-family: 'Varela Round', sans-serif;
+    color: #13245D;
+    background-color: #f8eccd;
+    overflow: hidden;
+    text-align: left;
+}
+
+.gardener-card .btn-primary{
+    color: #ffffff 
+}
+
