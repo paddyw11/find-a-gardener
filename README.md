@@ -32,7 +32,7 @@ Find a Gardener is a website that will provide a list of available gardeners and
 
 The users of the website will be able to find gardeners in their area and find more information about them.
 
-The other user of the website will be ther garndered themselves who had add, update or delete their information profile.
+The other user of the website will be ther garndener themselves who can create a profile to login to and can add, update or delete their information profile.
 
 ### Live project
 
@@ -42,6 +42,7 @@ Find the live project [here](placeholder)
 
 ## Table of Contents
 1. [**UX**](#ux)
+    - [**Strategy Plane](#strategy-plane)
     - [**User Stories**](#user-stories)
     - [**Design**](#design)
         - [**Color Scheme**](#color-scheme)
@@ -74,11 +75,70 @@ Find the live project [here](placeholder)
 
 #UX
 
-##User Stories
+##Strategy Plane
 
-###Design
+Target Audience
+
+The target audience of this website are people looking for a gardener.
+
+User Requirements and Expectations
+
+All users of the site will expect:
+- Links and buttons to work logically.
+- A simple and intuitive navigation system.
+- Interactive feedback and notifications.
+- Information presented in a clear and concise manner.
+- A visually appealing design.
+- A simple way to create an account.
+- A simple way to log in for existing users.
+- The ability to add, edit or delete own data.
+- Accessibility.
+
+
+User Stories
+
+As any user:
+1. I want to undertand the purpose of the site on first en.
+2. I want to be able to navigate the site easily and intuitively.
+3. I want to be able to view the website on any device.
+4. I want to be able to return to the page without using browser buttons if I encounter an error.
+5. I want to view a list of available gardeners.
+6. I want to search for gardeners by region or by services offered.
+
+As a logged out user:
+
+7. I want to be able to easily register a new account.
+8. I want to be able to locate a log in page easily.
+
+As a logged in user:
+
+9. I want to be able to see my profile.
+10. I want to be able to add, edit or delete my own profile.
+11. I want to receive feedback when i've completed an action. 
+
+
+As a logged in admin User:
+
+12. I want to be able to add, edit or delete regions.
+13. I want to be able to add, edit or delete services offered.
+14. I want to receive feedback when i've completed an action.
+
+Features Planned
+
+- All Users
+1. Responsive design
+2. Postgres database to store gardeners, regions, services and users
+3. Pages displaying gardeners filtered by either region or services offered
+
+- Logged out users
+
+Structure Plane
 
 ####Color Scheme
+
+I chose a colour scheme that closely resembles the industry that the website is catagorised in, nature and gardens. Synonymous with eco and nature, green was a colour that would dominate on this website. The complimentary color to green, red, i have used to style any danger buttons for example delete. 
+
+![Colour Palette](documentation/readme/color-palette.png)
 
 ####Imagery
 
