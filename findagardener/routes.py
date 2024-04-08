@@ -5,21 +5,20 @@ from findagardener.models import GardenerServiceAssociation, Service, \
 
 from werkzeug.security import generate_password_hash, check_password_hash
 
-#db.drop_all()
 db.create_all()
 
-#from findagardener.models import Category, Task
 
 @app.route("/")
 def home():
     return render_template("home.html")
 
-#register 
+# register
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-    #check if username already exists in db
+        # check if username already exists in db
         existing_user = Users.query.filter(
             Users.username == request.form.get("username").lower()).all()
 
@@ -34,40 +33,37 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        #puts the new user into session cookie
+        # puts the new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("You have successfully registered!")
         return redirect(url_for("profile", username=session["user"]))
-        #return render_template("register.html", username=session["user"])
-
     return render_template("register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        #check if username exists in db
-        existing_user = Users.query.filter(Users.username == \
-            request.form.get("username").lower()).all()
+        # check if username exists in db
+        existing_user = Users.query.filter(Users.username == request.form.get(
+            "username").lower()).all()
 
         if existing_user:
-            #ensure hashed password matches user input
+            # ensure hashed password matches user input
             if check_password_hash(
-                existing_user[0].password, request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    existing_user[0].password, request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
-                #invalid password match
+                # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            #username doesn't exist
+            # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-
 
     return render_template("login.html")
 
@@ -75,7 +71,7 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     """
-    A function that displays the user's gardener profile 
+    A function that displays the user's gardener profile
     they have created
     """
     if "user" in session:
@@ -86,7 +82,7 @@ def profile(username):
         gardeners = list(Gardener.query.order_by(Gardener.gardener_name).all())
         return render_template(
             "profile.html", username=session["user"], gardeners=gardeners)
-    
+
     else:
         return redirect(url_for("login"))
 
@@ -109,9 +105,6 @@ def full_profile(gardener_name):
     """
     gardener = Gardener.query.filter_by(gardener_name=gardener_name).first()
     return render_template("full_profile.html", gardener=gardener)
-
-
-
 
 
 @app.route("/services")
@@ -152,7 +145,8 @@ def delete_service(service_id):
     db.session.commit()
     return redirect(url_for("services"))
 
-#gardener
+# gardener
+
 
 @app.route("/gardeners")
 def gardeners():
@@ -165,17 +159,17 @@ def add_gardener():
 
     services = Service.query.order_by(Service.service_name).all()
     regions = Region.query.order_by(Region.region_name).all()
-    
+
     if request.method == "POST":
         # Extract form data
         gardener_name = request.form.get("gardener_name")
         region_id = int(request.form.get("region_id"))
         services_offered = [
-            int(service_id) for service_id in \
-                 request.form.getlist("services_offered")]
+            int(service_id) for service_id in
+            request.form.getlist("services_offered")]
         created_by = session.get("user")
 
-         # Check if gardener with the same name already exists
+        # Check if gardener with the same name already exists
         existing_gardener = Gardener.query.filter_by(
             gardener_name=gardener_name).first()
         if existing_gardener:
@@ -187,8 +181,8 @@ def add_gardener():
 
         # Get the service objects based on the service IDs from the form
         services = Service.query.filter(Service.id.in_(services_offered)).all()
-              
-         # Create a new gardener object
+
+        # Create a new gardener object
         gardener = Gardener(
             gardener_name=gardener_name,
             region=region,
@@ -200,15 +194,15 @@ def add_gardener():
         db.session.commit()
 
         flash("Gardener added successfully")
-        print("Gardener added successfully") 
+        print("Gardener added successfully")
         return redirect(url_for("gardeners"))
 
     # For GET request, render the add_gardener template
     services = Service.query.order_by(Service.service_name).all()
     regions = Region.query.order_by(Region.region_name).all()
-    return render_template("add_gardener.html", services=services, \
-         regions=regions)
-    
+    return render_template("add_gardener.html", services=services,
+                           regions=regions)
+
 
 @app.route("/edit_gardener/<int:gardener_id>", methods=["GET", "POST"])
 def edit_gardener(gardener_id):
@@ -218,17 +212,19 @@ def edit_gardener(gardener_id):
     if request.method == "POST":
         gardener_name = request.form.get("gardener_name")
         region_id = int(request.form.get("region_id"))
-        services_offered = [int(service_id) for service_id \
-             in request.form.getlist("services_offered")]
-        
+        services_offered = [int(service_id) for service_id
+                            in request.form.getlist("services_offered")]
+
         gardener.gardener_name = gardener_name
         gardener.region_id = region_id
-        gardener.services_offered = Service.query.filter(Service.id.in_(services_offered)).all()
+        gardener.services_offered = Service.query.filter(Service.id.in_(
+            services_offered)).all()
         db.session.commit()
         return redirect(url_for("gardeners"))
-        
-    return render_template("edit_gardener.html", services=services, \
-         regions=regions, gardener=gardener)
+
+    return render_template("edit_gardener.html", services=services,
+                           regions=regions, gardener=gardener)
+
 
 @app.route("/delete_gardener/<int:gardener_id>")
 def delete_gardener(gardener_id):
@@ -237,7 +233,9 @@ def delete_gardener(gardener_id):
     db.session.commit()
     return redirect(url_for("gardeners"))
 
-#region code
+# region code
+
+
 @app.route("/region")
 def regions():
     regions = Region.query.order_by(Region.region_name).all()
@@ -287,13 +285,9 @@ def gardeners_by_region(region_id):
 @app.route("/gardeners_by_service/<int:service_id>")
 def gardeners_by_service(service_id):
     # Displays the gardeners for the selected service
-    gardeners = Gardener.query.filter(Gardener.services_offered.any(id=service_id)).all()
+    gardeners = Gardener.query.filter(Gardener.services_offered.any(
+        id=service_id)).all()
     service = Service.query.get_or_404(service_id)
     return render_template("gardeners_by_service.html",
                            service=service, gardeners=gardeners,
                            services_offered=services)
-
-
-
-
-
