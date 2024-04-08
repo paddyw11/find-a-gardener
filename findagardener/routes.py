@@ -84,7 +84,8 @@ def profile(username):
         and displays their profile
         """
         gardeners = list(Gardener.query.order_by(Gardener.gardener_name).all())
-        return render_template("profile.html", username=session["user"], gardeners=gardeners)
+        return render_template(
+            "profile.html", username=session["user"], gardeners=gardeners)
     
     else:
         return redirect(url_for("login"))
@@ -99,6 +100,18 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/full_profile/<gardener_name>")
+def full_profile(gardener_name):
+    """
+    A function to dipslay the full prfile of the the gardener.
+    """
+    gardener = Gardener.query.filter_by(gardener_name=gardener_name).first()
+    return render_template("full_profile.html", gardener=gardener)
+
+
+
 
 
 @app.route("/services")
@@ -261,20 +274,6 @@ def delete_region(region_id):
     return redirect(url_for("regions"))
 
 
-#@app.route("/gardeners_by_region", methods=["GET", "POST"])
-#def gardeners_by_region():
-    
-    #regions = Region.query.order_by(Region.region_name).all()
-    #selected_region_id = request.form.get("region_id")
-   # gardener = []
-
-    #if selected_region_id:
-   #     selected_region_id = int(selected_region_id)
-   #     gardeners = Gardener.query.join(Gardener).join(Region).filter(Region.id == selected_region_id).all()
-
-    #return render_template("gardeners_by_region.html", regions=regions, gardener=gardener)
-
-
 @app.route("/gardeners_by_region/<int:region_id>")
 def gardeners_by_region(region_id):
     # Displays the gardeners for the selected region
@@ -293,6 +292,8 @@ def gardeners_by_service(service_id):
     return render_template("gardeners_by_service.html",
                            service=service, gardeners=gardeners,
                            services_offered=services)
+
+
 
 
 
