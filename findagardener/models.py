@@ -2,7 +2,7 @@ from findagardener import db
 
 
 class Users(db.Model):
-    #schema for the users model
+    # schema for the users model
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(500), unique=True, nullable=False)
@@ -13,11 +13,15 @@ class Users(db.Model):
             self.username, self.password)
 
 # schema for the association model
-GardenerServiceAssociation = db.Table('gardener_service_association', \
+
+
+GardenerServiceAssociation = db.Table(
+    'gardener_service_association',
     db.Column('gardener_id', db.Integer, db.ForeignKey(
-        'gardener.id', ondelete="CASCADE"), primary_key=True), \
-            db.Column('service_id', db.Integer, db.ForeignKey(
+        'gardener.id', ondelete="CASCADE"), primary_key=True),
+    db.Column('service_id', db.Integer, db.ForeignKey(
             'service.id', ondelete="CASCADE"), primary_key=True))
+
 
 class Service(db.Model):
     # schema for the Service model
@@ -29,6 +33,7 @@ class Service(db.Model):
     def __repr__(self):
         return self.service_name
 
+
 class Gardener(db.Model):
     # schema for the Gardener model
     id = db.Column(db.Integer, primary_key=True)
@@ -37,8 +42,9 @@ class Gardener(db.Model):
         "region.id", ondelete="CASCADE"), nullable=False)
     region = db.relationship("Region", backref=db.backref(
         "gardener"), lazy=True)
-    services_offered = db.relationship("Service", \
-         secondary='gardener_service_association', backref='gardeners')
+    services_offered = db.relationship(
+        "Service", secondary='gardener_service_association',
+        backref='gardeners')
     created_by = db.Column(db.Text, db.ForeignKey(
         "users.username", ondelete="CASCADE"), nullable=False)
 
@@ -46,6 +52,7 @@ class Gardener(db.Model):
         return "#{0} - Gardener: {1} | Region: {2}".format(
             self.id, self.gardener_name, self.region.region_name
         )
+
 
 class Region(db.Model):
     # schema for the region model
