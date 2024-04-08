@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="display-3 primary text-center"> {{gardener.gardener_name}}'s' Profile</h3>
+
+<div class="container mt-1 w-100 text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="full_card">
+                <div class="card-body p-4">
+                    <h5 class="card-title">{{ gardener.gardener_name }}</h5>
+                    <p class="card-text">Region: {{ gardener.region }}</p>
+                    <p class="card-text">Services Offered:</p>
+                    <ul>
+                        {% for service in gardener.services_offered %}
+                        <li>{{ service.service_name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mt-3 justify-content-center">
+  <div class="col-md-6 text-center">
+      <a href="{{ url_for('gardeners') }}" class="btn btn-secondary">Back to Gardeners</a>
+  </div>
+</div>
+{% endblock %}

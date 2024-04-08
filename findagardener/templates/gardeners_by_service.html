@@ -11,14 +11,15 @@
           <div class="col d-flex justify-content-center m-auto">
             <div class="gardener-card">
               <div class="card-body p-4">
-                <h5 class="card-title">{{ gardener.gardener_name }}</h5>
-                <p class="card-text">{{ gardener.region }}</p>
-                <p class="card-text">
+                <h5 class="card-title">{{ gardener.gardener_name }}</h5><br>
+                <p class="card-text">Region: {{ gardener.region }}</p>
+                <p class="card-text">Services:
                   {% for service in gardener.services_offered %}
                      <li>{{ service }}</li>                     
                   {% endfor %}
                 </p>
                 <div class="carrd-footer text-center">
+                  <a class="btn btn-primary" href="{{ url_for('full_profile', gardener_name=gardener.gardener_name) }}" role="button">View Profile</a>
                   {% if session.user == 'admin1' %}
                     <a class="btn btn-primary" href="{{ url_for('edit_gardener', gardener_id=gardener.id) }}" role="button">Edit</a>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ gardener.id }}">
@@ -51,6 +52,8 @@
     {% endfor %}
   </div>
 </div>
-              
+
+
+
 
 {% endblock %}

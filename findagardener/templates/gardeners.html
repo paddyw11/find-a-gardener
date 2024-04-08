@@ -18,14 +18,16 @@
                 {% endfor %}
               </p>
               <div class="card-footer text-center">
-                {% if session.user == 'admin1' or gardener.created_by == session.user %}
-                  <div class="card-footer text-center">
-                    <a class="btn btn-primary" href="{{ url_for('edit_gardener', gardener_id=gardener.id) }}" role="button">Edit</a>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ gardener.id }}">
-                      Delete
-                    </button>
-                  </div>
-                {% endif %}
+                <a class="btn btn-primary" href="{{ url_for('full_profile', gardener_name=gardener.gardener_name) }}" role="button">View Profile</a>
+
+                  {% if session.user == 'admin1' or gardener.created_by == session.user %}
+                    <div class="card-footer text-center">
+                      <a class="btn btn-primary" href="{{ url_for('edit_gardener', gardener_id=gardener.id) }}" role="button">Edit</a>
+                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ gardener.id }}">
+                        Delete
+                      </button>
+                    </div>
+                  {% endif %}
               </div>  
             </div>
           </div>
