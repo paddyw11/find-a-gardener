@@ -3,16 +3,6 @@
 
 <h3 class="display-3 primary text-center">Gardeners</h3>
 
-
-
-<div class="row justify-content-md-3">
-  <div class="col-md-3 text-center"></div>
-  <a href="{{ url_for ('add_gardener') }}" class="btn btn-primary btn-lg">
-      Add Gardener <i class="fas fa-square-plus"></i>
-  </a>
-</div>
-
-
 <div class="container mt-3 w-100 text-center">
   <div class="row row-cols-lg-4 row-cols-md-3 g-4 mt-0 justify-content-center">
     {% for gardener in gardeners %}
@@ -24,7 +14,7 @@
               <p class="card-text"> Region: {{ gardener.region }}</p>
               <p class="card-text"> Services:
                 {% for service in gardener.services_offered %}
-                  <li>{{ service }}</li>
+                  <li>{{ service }} - £{{ service.price }}</li>
                 {% endfor %}
               </p>
               <div class="card-footer text-center">
@@ -42,24 +32,33 @@
         </div>
 
         <!-- modal-->
-          <div class="modal fade" id="staticBackdrop-{{ gardener.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to delete the profile?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, take me back to safety</button>
-                  <a href="{{ url_for('delete_gardener', gardener_id=gardener.id) }}" class="btn btn-danger" >Yes, delete it!</a>
-                </div>
+        <div class="modal fade" id="staticBackdrop-{{ gardener.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to delete the profile?</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, take me back to safety</button>
+                <a href="{{ url_for('delete_gardener', gardener_id=gardener.id) }}" class="btn btn-danger" >Yes, delete it!</a>
               </div>
             </div>
           </div>
+        </div>
       </section>
     {% endfor %} 
   </div>
 </div>
+
+
+<div class="row justify-content-md-3">
+  <div class="col-md-3 text-center"></div>
+  <a href="{{ url_for ('register') }}" class="btn btn-primary btn-lg">
+      Register to add a Gardener Profile <i class="fas fa-square-plus"></i>
+  </a>
+</div>
+
 
 {% endblock %}
