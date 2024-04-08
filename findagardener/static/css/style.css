@@ -217,7 +217,7 @@ button {
 }
 
 .full_card {
-    width: 40rem;
+    width: 100%;
     min-height: auto;
     margin-top: 30px;
     margin-bottom: 1rem;
