@@ -159,7 +159,7 @@ button {
     min-height: 10rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    border: 2px solid #386641; 
+    border: 4px solid #386641; 
     border-radius: 25px;
     font-family: 'Varela Round', sans-serif;
     color: #13245D;
@@ -180,7 +180,7 @@ button {
     min-height: 10rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    border: 2px solid #386641; 
+    border: 4px solid #386641; 
     border-radius: 25px;
     font-family: 'Varela Round', sans-serif;
     color: #13245D;
@@ -203,7 +203,7 @@ button {
     min-height: auto;
     margin-top: 30px;
     margin-bottom: 1rem;
-    border: 2px solid #386641; 
+    border: 4px solid #386641; 
     border-radius: 25px;
     font-family: 'Varela Round', sans-serif;
     color: #13245D;
@@ -216,3 +216,20 @@ button {
     color: #ffffff 
 }
 
+.full_card {
+    width: 40rem;
+    min-height: auto;
+    margin-top: 30px;
+    margin-bottom: 1rem;
+    border: 4px solid #386641; 
+    border-radius: 25px;
+    font-family: 'Varela Round', sans-serif;
+    color: #13245D;
+    background-color: #f8eccd;
+    overflow: hidden;
+    text-align: left;
+}
+
+.card-title {
+    text-align: center;
+}
