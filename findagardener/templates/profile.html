@@ -10,45 +10,53 @@
       Add your gardener profile <i class="fas fa-square-plus"></i>
     </a>
   </div>
-  
-  <div class="container text-center card_containter">
-    <div class="row">
+    
+  <div class="container mt-3 w-100 text-center">
+    <div class="row row-cols-lg-4 row-cols-md-3 g-4 mt-0 justify-content-center">
       {% for gardener in gardeners %}
         {% if gardener.created_by == session.user or session.user == 'admin1' %}
-          <div class="col col-sm-8 col-md-3 col-lg-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{ gardener.gardener_name }}</h5>
-                <p class="card-text">{{ gardener.region }}</p>
-                <p class="card-text">
-                  {% for service in gardener.services_offered %}
-                    {{ service }}<br>
-                  {% endfor %}
-                </p>
-                {% if session.user == 'admin1' or gardener.created_by == session.user %}
-                  <a class="btn btn-primary" href="{{ url_for('edit_gardener', gardener_id=gardener.id) }}" role="button">Edit</a>
-                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ gardener.id }}">
-                    Delete
-                  </button>
-                {% endif %} 
-                <!-- modal-->
-                <div class="modal fade" id="staticBackdrop-{{ gardener.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to delete the profile?</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <section class="mt-2">
+            <div class="col d-felx justify-content-center m-auto">
+              <div class="gardener-card">
+                <div class="card-body p-4">
+                  <h5 class="card-title">{{ gardener.gardener_name }}</h5>
+                  <p class="card-text">{{ gardener.region }}</p>
+                  <p class="card-text"> Services:
+                    {% for service in gardener.services_offered %}
+                      <li>{{ service }}</li>
+                    {% endfor %}
+                  </p>
+                  <div class="card-footer text-center">
+                    {% if session.user == 'admin1' or gardener.created_by == session.user %}
+                      <div class="card-footer text-center">
+                        <a class="btn btn-primary" href="{{ url_for('edit_gardener', gardener_id=gardener.id) }}" role="button">Edit</a>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ gardener.id }}">
+                          Delete
+                        </button>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, take me back to safety</button>
-                        <a href="{{ url_for('delete_gardener', gardener_id=gardener.id) }}" class="btn btn-danger" >Yes, delete it!</a>
-                      </div>
-                    </div>
+                    {% endif %}
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+
+            <!-- modal-->
+            <div class="modal fade" id="staticBackdrop-{{ gardener.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to delete the profile?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, take me back to safety</button>
+                    <a href="{{ url_for('delete_gardener', gardener_id=gardener.id) }}" class="btn btn-danger" >Yes, delete it!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
         {% endif %}
       {% endfor %}
     </div>
