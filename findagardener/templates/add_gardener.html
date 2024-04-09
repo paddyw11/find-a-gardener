@@ -14,7 +14,7 @@
         <!--region-->
         <div class=" row mb-3">
             <label for="region_id" class="form-label">Region</label>
-            <select name="region_id" class="form-select">
+            <select id="region_id" name="region_id" class="form-select">
                 {% for region in regions %}
                 <option value="{{ region.id }}">{{ region.region_name }}</option>
                 {% endfor %}
