@@ -4,7 +4,7 @@
   <h3 class="display-3 primary text-center">{{ service }}</h3>
 
 <div class="container mt-3 w-100 text-center">
-  <div class="row row-cols-lg-4 row-cols-md-3 g-4 mt-0 justify-content-center">
+  <div class="row row-cols-lg-3 row-cols-md-3 g-4 mt-0 justify-content-center">
     {% for gardener in gardeners %}
       {% if service in gardener.services_offered %}
         <section class="mt-2">
@@ -15,7 +15,7 @@
                 <p class="card-text">Region: {{ gardener.region }}</p>
                 <p class="card-text">Services:
                   {% for service in gardener.services_offered %}
-                     <li>{{ service }}</li>                     
+                     <ul>{{ service }}</ul>                     
                   {% endfor %}
                 </p>
                 <div class="carrd-footer text-center">

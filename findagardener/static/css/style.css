@@ -2,14 +2,26 @@
 
 
 .btn-primary {
-        color: #fff; 
-        background-color: #386641;
-        border-color: #386641;
+    color: #fff; 
+    background-color:#a7c957;
+    border-color: #386641;
 }
 
 .btn-primary:hover {
     color: #fff; 
+    background-color: #a7c957;
+    border-color: #386641;
+}
+
+.btn-bs-success {
+    color: #fff; 
     background-color: #386641;
+    border-color: #386641;
+}
+
+.btn-bs-success {
+    color: #fff; 
+    background-color: #a7c957;
     border-color: #386641;
 }
 
@@ -18,7 +30,6 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Gafata', sans-serif;
-    cursor: url('../images/wateringcan.cur') !important;
     margin-bottom: 100px;
 }
 
@@ -35,13 +46,11 @@ main {
     width: 100%;
     height: 100%;
 }
+
 .garden-font {
-  font-family: "Cabin", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+    font-family: "Cabin", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .fa-seedling {
@@ -59,7 +68,7 @@ main {
 
 .nav-item {
     position: relative;
-    margin-right: 20px; /* Ensure relative positioning for pseudo-element */
+    margin-right: 20px;
 }
 
 .nav-item::after {
@@ -129,7 +138,6 @@ main {
     border-radius: 10px;
     padding-left:10px;
     padding-right:10px;
-
 }
 
 button {
@@ -141,6 +149,7 @@ button {
 .btn-danger{
     background-color: #BC4749;
 }
+
 #flash-msgs {
     font-family: 'Cabin', sans-serif;
     font-size: large;
@@ -177,7 +186,7 @@ button {
 
 .service-card {
     width: 20rem;
-    min-height: 10rem;
+    min-height: 212px;
     margin-top: 2rem;
     margin-bottom: 1rem;
     border: 4px solid #386641; 
@@ -197,17 +206,16 @@ button {
     color: #ffffff 
 }
 
-
 .gardener-card {
     width: 20rem;
-    min-height: auto;
+    min-height: 363px;
     margin-top: 30px;
     margin-bottom: 1rem;
     border: 4px solid #386641; 
     border-radius: 25px;
     font-family: 'Varela Round', sans-serif;
     color: #13245D;
-    background-color: #f8eccd;
+    background-color: #F2E8CF;
     overflow: hidden;
     text-align: left;
 }
@@ -216,7 +224,11 @@ button {
     color: #ffffff 
 }
 
-.full_card {
+.gardener-card ul {
+    padding-left: 0%;
+}
+
+.full-card {
     width: 100%;
     min-height: auto;
     margin-top: 30px;
@@ -225,7 +237,7 @@ button {
     border-radius: 25px;
     font-family: 'Varela Round', sans-serif;
     color: #13245D;
-    background-color: #f8eccd;
+    background-color: #f2e8cf;
     overflow: hidden;
     text-align: left;
 }
@@ -233,3 +245,42 @@ button {
 .card-title {
     text-align: center;
 }
+
+.form-label {
+    font-weight: 600;
+    color: #006b20;
+}
+
+/* Media query for screens between 768px and 900px */
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+    .gardener-card {
+        min-height: 428px;
+    }
+
+    .service-card {
+        min-height: 312px;
+    }
+}
+
+/* Media query for screens between 900px and 1200px */
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+    .gardener-card {
+        min-height: 429px;
+    }
+
+    .service-card {
+        min-height: 315px;
+    }
+}
+
+/* Media query for screens over 1200px */
+@media only screen and (min-width: 1200px) {
+    .gardener-card {
+        min-height: 429px;
+    }
+
+    .service-card {
+        min-height: 292px;
+    }
+}
+

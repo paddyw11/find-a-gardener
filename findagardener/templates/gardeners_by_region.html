@@ -3,7 +3,7 @@
 
   <h3 class="display-3 primary text-center">{{ region }}</h3>
   <div class="container mt-3 w-100 text-center">
-    <div class="row row-cols-lg-4 row-cols-md-3 g-4 mt-0 justify-content-center">
+    <div class="row row-cols-lg-3 row-cols-md-3 g-4 mt-0 justify-content-center">
       {% for gardener in gardeners %}
         {% if region == gardener.region %}
           <section class="mt-2">
@@ -14,7 +14,7 @@
                   <p class="card-text">{{ gardener.region }}</p>
                   <p class="card-text"> Servcies:
                     {% for service in gardener.services_offered %}
-                      <li>{{ service }} - £{{ service.price }}</li>
+                      <ul>{{ service }} - £{{ service.price }}</ul>
                     {% endfor %}
                   </p>
                   <div class="card-footer text-center">
