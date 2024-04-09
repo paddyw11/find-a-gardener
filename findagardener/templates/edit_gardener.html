@@ -14,7 +14,7 @@
         <!--region-->
         <div class=" row mb-3">
             <label for="region_id" class="form-label">Region</label>
-            <select name="region_id" class="form-select">
+            <select id="region_id" name="region_id" class="form-select">
                 {% for region in regions %}
                 <option value="{{ region.id }}">{{ region.region_name }}</option>
                 {% endfor %}
@@ -23,7 +23,7 @@
         <!--services offered-->
         <div class=" row mb-3">
             <label for="services_offered" class="form-label">Service(s) Offered</label>
-            <select name="services_offered" class="form-select" multiple>
+            <select id="services_offered" name="services_offered" class="form-select" multiple>
                 {% for service in services %}
                 <option value="{{ service.id }}">{{ service.service_name }}</option>
                 {% endfor %}
