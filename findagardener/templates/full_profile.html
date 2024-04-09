@@ -13,7 +13,7 @@
                     <p class="card-text">Services Offered:</p>
                     <ul>
                         {% for service in gardener.services_offered %}
-                        <li>{{ service.service_name }}</li>
+                        <ul>{{ service.service_name }}</ul>
                         {% endfor %}
                     </ul>
                 </div>
