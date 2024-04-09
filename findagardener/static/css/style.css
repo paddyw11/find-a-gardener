@@ -242,6 +242,9 @@ button {
     text-align: left;
 }
 
+.full-card ul {
+    padding-left: 0%;
+}
 .card-title {
     text-align: center;
 }
