@@ -47,6 +47,12 @@ main {
     height: 100%;
 }
 
+.home-img{
+    border-radius: 10px;
+    width: 85%;
+    height: auto;
+}
+
 .garden-font {
     font-family: "Cabin", sans-serif;
     font-weight: 400;
