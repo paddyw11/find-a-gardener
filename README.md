@@ -28,6 +28,8 @@ to add db - cmd - set_pg
 
 # [Find a Gardener](https://find-a-gardener-2f0e9afaf839.herokuapp.com/)
 
+![Am I Responsive](documentation/readme/amiresponsive.png)
+
 Find a Gardener is a website that will provide a list of available gardeners and their respective services. 
 
 The users of the website will be able to find gardeners in their area and find more information about them.
@@ -36,7 +38,7 @@ The other user of the website will be ther garndener themselves who can create a
 
 ### Live project
 
-Find the live project [here](placeholder)
+Find the live project [here](https://find-a-gardener-2f0e9afaf839.herokuapp.com/)
 
 ---
 
@@ -73,9 +75,9 @@ Find the live project [here](placeholder)
 ---
 
 
-#UX
+# UX
 
-##Strategy Plane
+## Strategy Plane
 
 Target Audience
 
@@ -134,72 +136,163 @@ Features Planned
 
 Structure Plane
 
-####Color Scheme
+#### Color Scheme
 
 I chose a colour scheme that closely resembles the industry that the website is catagorised in, nature and gardens. Synonymous with eco and nature, green was a colour that would dominate on this website. The complimentary color to green, red, i have used to style any danger buttons for example delete. 
 
 ![Colour Palette](documentation/readme/color-palette.png)
 
-####Imagery
+#### Imagery
 
-####Typography
+#### Typography
 
-###Wireframes
+### Wireframes
+---
 
-###Database Design
 
-#Features
+To follow best practice, wireframes have been developed to guide the project throught it's development. Device sizes for desktop, tablet and mobile have been created for the core pages using [Balsamiq](https)
 
-##Current Features
+<details>
+<summary>Home Page</summary>
 
-##Planned Features
+* Home Page ![screenshot of home page](documentation/readme/wireframes/home-page.png)
 
-#Technologies Used
+</details>
 
-##Development Technologies
+---
 
-##Front-End Technologies
+<details>
+<summary>Register Form</summary>
 
-##Back-End Technologies
+* Register Form ![screenshot of home page](documentation/readme/wireframes/register.png)
 
-##Python Modules
+</details>
 
-#Testing
+---
 
-##Validation
+<details>
+<summary>Login Page</summary>
 
-##User Story Testing
+* Login Page ![screenshot of home page](documentation/readme/wireframes/login.png)
 
-##Evidence Of CRUD
+</details>
 
-##Compatibility
+---
 
-##Issues
+<details>
+<summary>All Gardeners Page</summary>
+
+* All Gardeners Page ![screenshot of home page](documentation/readme/wireframes/all-gardeners.png)
+
+</details>
+
+---
+
+<details>
+<summary>Add profile</summary>
+
+* Add Profile Page ![screenshot of home page](documentation/readme/wireframes/add-profile.png)
+
+</details>
+
+---
+
+<details>
+<summary>Regions</summary>
+
+* Regions List Page ![screenshot of home page](documentation/readme/wireframes/region.png)
+
+</details>
+
+---
+
+<details>
+<summary>Search By Region</summary>
+
+* Search By Region Page ![screenshot of home page](documentation/readme/wireframes/search-by-region.png)
+
+</details>
+
+---
+
+<details>
+<summary>Services</summary>
+
+* Services List Page ![screenshot of home page](documentation/readme/wireframes/services.png)
+
+</details>
+
+
+### Database Design
+
+# Features
+
+## Current Features
+
+## Planned Features
+
+# Technologies Used
+
+## Development Technologies
+
+## Front-End Technologies
+
+## Back-End Technologies
+
+## Python Modules
+
+# Testing
+
+## Validation
+
+### HTML Validator
+
+[Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2F8080-paddyw11-findagardener-kmry0yh0br8.ws-eu110.gitpod.io%2F)
+
+[All Gardeners]()
+
+[Services Page]()
+
+[Search By Services]()
+
+[Regions Page]()
+
+[Search by Regions]()
+
+[Add Gardener Profile]()
+
+[AlRegister Page]()
+
+[Login Page]()
+
+
+## User Story Testing
+
+## Evidence Of CRUD
+
+## Compatibility
+
+## Issues
 
 Region error in post add_gargener form. I realised form posts were not adding tot he database for the garderner base. I added some print statements to test how the form was functioning. Some print statemnts identified an issues at the point of identifying the selected region on the form. 
 #Deployment
 
-##Local Deployment
+## Local Deployment
 
-##Remote Deployment
+## Remote Deployment
 
-#Credits
+# Credits
 
--   
+## Images
 
-##Code
+- Pexels - Home Page Image [Magic K Photography](https://www.pexels.com/@magic-k-24827758/)
+
+## Code
 
 - Code Pen - Grass Footer [@Tillberger](https://codepen.io/tillberger/pen/MWqbWZJ)
 
 
-##Tools And Software
-
-##Images
-
-Rake image - 123RF [Sue Tot](https://www.123rf.com/profile_suetot)
-
-
-
+## Tools And Software
 
 
 
