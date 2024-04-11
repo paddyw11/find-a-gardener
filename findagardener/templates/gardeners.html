@@ -12,11 +12,11 @@
             <div class="card-body p-4">
               <h4 class="card-title">{{ gardener.gardener_name }}</h4><br>
               <p class="card-text"> Region: {{ gardener.region }}</p>
-              <p class="card-text"> Services:
+              <p class="card-text"> Services:</p>
                 {% for service in gardener.services_offered %}
                   <ul>{{ service }} - £{{ service.price }}</ul>
                 {% endfor %}
-              </p>
+              
               <div class="card-footer text-center">
                 <a class="btn btn-primary" href="{{ url_for('full_profile', gardener_name=gardener.gardener_name) }}" role="button">View Profile</a>
 
@@ -38,7 +38,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to delete the profile?</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel-{{ gardener.id }}">Are you sure you want to delete the profile?</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                   </button>
               </div>
