@@ -21,11 +21,14 @@
                 <div class="card-body p-4">
                   <h5 class="card-title">{{ gardener.gardener_name }}</h5>
                   <p class="card-text">{{ gardener.region }}</p>
-                  <p class="card-text"> Services:
+                  <p class="card-text"> Services:</p>
                     {% for service in gardener.services_offered %}
-                      <li>{{ service }}</li>
+                      <ul>
+                        <li>{{ service }} - £{{ service.price }}
+                        </li>
+                      </ul>
                     {% endfor %}
-                  </p>
+                  
                   <div class="card-footer text-center">
                     {% if session.user == 'admin1' or gardener.created_by == session.user %}
                       <div class="card-footer text-center">

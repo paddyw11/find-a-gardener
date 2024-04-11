@@ -12,11 +12,14 @@
                 <div class="card-body p-4">
                   <h5 class="card-title">{{ gardener.gardener_name }}</h5><br>
                   <p class="card-text">{{ gardener.region }}</p>
-                  <p class="card-text"> Servcies:
-                    {% for service in gardener.services_offered %}
-                      <ul>{{ service }} - £{{ service.price }}</ul>
-                    {% endfor %}
-                  </p>
+                  <p class="card-text"> Servcies:</p>
+                  {% for service in gardener.services_offered %}
+                    <ul>
+                      <li>{{ service }} - £{{ service.price }}
+                      </li>
+                    </ul>
+                  {% endfor %}
+                  
                   <div class="card-footer text-center">
                     <a class="btn btn-primary" href="{{ url_for('full_profile', gardener_name=gardener.gardener_name) }}" role="button">View Profile</a>
                     {% if session.user == 'admin1' %}

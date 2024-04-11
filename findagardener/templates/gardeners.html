@@ -14,7 +14,10 @@
               <p class="card-text"> Region: {{ gardener.region }}</p>
               <p class="card-text"> Services:</p>
                 {% for service in gardener.services_offered %}
-                  <ul>{{ service }} - £{{ service.price }}</ul>
+                  <ul>
+                    <li>{{ service }} - £{{ service.price }}
+                      </li>
+                    </ul>
                 {% endfor %}
               
               <div class="card-footer text-center">
