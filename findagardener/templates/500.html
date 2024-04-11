@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <!-- Displays a custom error page -->
+  <div class="container text-center">
+  <i class="fa-solid fa-plant-wilt wilt-icon mt-8"></i><h1 id="error-message">Oops, something went wrong!</h1>
+  <!-- Redirects to the home page -->
+  <a href="{{ url_for('home') }}" class="btn btn-lg btn-bs-success"><i class="fa-solid fa-seedling"></i> Go back</a>
+
+  {% endblock %}

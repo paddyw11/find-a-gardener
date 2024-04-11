@@ -291,3 +291,20 @@ def gardeners_by_service(service_id):
     return render_template("gardeners_by_service.html",
                            service=service, gardeners=gardeners,
                            services_offered=services)
+
+@app.errorhandler(404)
+def not_found(e):
+    # Function which displays a custom error 404 page
+    return render_template("404.html"), 404
+
+
+@app.errorhandler(500)
+def internal_error(e):
+    # Function which displays a custom error 500 page
+    return render_template("500.html"), 500
+
+
+@app.errorhandler(403)
+def error_forbidden(e):
+    # Function which displays a custom error 403 page
+    return render_template("403.html"), 500
