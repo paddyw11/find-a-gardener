@@ -24,7 +24,7 @@
                 <h4 class="card-title">{{ service.service_name }}</h4>
               </a><br>
                 <p class="card-text">{{ service.service_description }}</p>
-                <p class="card-text"> Price (£): {{ service.price }}</p>
+                <p class="card-text"> Price: £{{ service.price }}</p>
                 
                 {% if session.user == 'admin1' %}
                   <div class="card-footer text-center">
