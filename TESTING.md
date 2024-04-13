@@ -97,15 +97,143 @@ See results:
 
 [Login Page](https://wave.webaim.org/report#/https://find-a-gardener-2f0e9afaf839.herokuapp.com/login)
 
+### Performance Testing
 
+#### Home
+![Home Page](/documentation/readme/lighthouse-home.png)
+
+#### All Gardeners
+![All Gardeners](/documentation/readme/lighthouse-all-gardeners.png)
+
+#### Services Page
+![Services Page](/documentation/readme/lighthouse-services.png)
+
+#### Search By Services
+![Search By Services](/documentation/readme/lighthouse-search-by-service.png)
+
+#### Regions Page
+![Regions Page](/documentation/readme/lighthouse-region.png)
+
+#### Search By Regions
+![Search by Regions](/documentation/readme/lighthouse-search-by-region.png)
+
+#### Register Page
+![Register Page](/documentation/readme/lighthouse-register.png)
+
+#### Login Page
+![Login Page](/documentation/readme/lighthouse-login.png)
 
 ## User Story Testing
 
 ## Evidence Of CRUD
 
-## Compatibility
+## Browser Compatibility
+
+### Home Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Text paragraph | Pass | Pass | Pass |
+| Image | Pass | Pass | Pass |
+| Navigtion Buttons | Pass | Pass | Pass | 
+
+### Gardeners Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Gardener Cards | Pass | Pass | Pass |
+| Add Gardener Button | Pass | Pass | Pass |
+| View Profile Button | Pass | Pass | Pass |
+| Edit Gardener Button | Pass | Pass | Pass | 
+| Delete Gardener Button | Pass | Pass | Pass |
+| Delete Modal | Pass | Pass | Pass |
+
+### Add Gardener Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Add gardener Form | Pass | Pass | Pass |
+| Add Gardener Button | Pass | Pass | Pass | 
+
+### Edit Gardener Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Add gardener Form | Pass | Pass | Pass |
+| Add Gardener Button | Pass | Pass | Pass |
+
+### Delete Gardener Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Text paragraph | Pass | Pass | Pass |
+| Action buttons | Pass | Pass | Pass | 
+| Features section images | Pass | Pass | Pass |
+| Features section links | Pass | Pass | Pass |
+
+### Services Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Service Cards | Pass | Pass | Pass |
+| Add Service Button | Pass | Pass | Pass |
+| Edit Service Button | Pass | Pass | Pass | 
+| Delete Service Button | Pass | Pass | Pass |
+| Delete Modal | Pass | Pass | Pass |
+
+### Add Service Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Add Service Form | Pass | Pass | Pass |
+| Add Service Button | Pass | Pass | Pass |
+
+### Edit Service Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Edit Service Form | Pass | Pass | Pass |
+| Edit Service Button | Pass | Pass | Pass |
+
+### Regions Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Region Cards | Pass | Pass | Pass |
+| Add Region Button | Pass | Pass | Pass |
+| Edit Region Button | Pass | Pass | Pass | 
+| Delete Region Button | Pass | Pass | Pass |
+| Delete Modal | Pass | Pass | Pass |
+
+### Add Region
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Add Region Form | Pass | Pass | Pass |
+| Add Region Button | Pass | Pass | Pass |
+
+### Edit Region Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Add Region Form | Pass | Pass | Pass |
+| Add Region Button | Pass | Pass | Pass |
+
+
+### Login Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Login Form | Pass | Pass | Pass |
+| Login Button | Pass | Pass | Pass |
+
+### Register Page
+
+| Feature | Google Chrome | Microsoft Edge | Mozilla Firefox |
+| ------- |:-------------:| :-------------:| :-------------: |
+| Register Form | Pass | Pass | Pass |
+| Register Button | Pass | Pass | Pass |
 
 ## Issues
 
 Region error in post add_gargener form. I realised form posts were not adding tot he database for the garderner base. I added some print statements to test how the form was functioning. Some print statemnts identified an issues at the point of identifying the selected region on the form. 
-#Deployment
