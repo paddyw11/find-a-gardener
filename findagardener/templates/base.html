@@ -30,28 +30,28 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               {% if not session.user %}
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="all gardeners page" href="{{ url_for('gardeners') }}"> All Gardeners</a>
+                  <a class="nav-link " aria-label="all gardeners page" href="{{ url_for('gardeners') }}"> All Gardeners</a>
                 </li>
               {% endif %}
 
               {% if session.user == 'admin1' %}
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="manage gardeners page" href="{{ url_for('gardeners') }}"> Manage Gardeners</a>
+                  <a class="nav-link " aria-label="manage gardeners page" href="{{ url_for('gardeners') }}"> Manage Gardeners</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link e" aria-current="manage regions page" href="{{ url_for('regions') }}"> Manage Regions</a>
+                  <a class="nav-link e" aria-label="manage regions page" href="{{ url_for('regions') }}"> Manage Regions</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="manage services page" href="{{ url_for('services') }}"> Manage Services</a>
+                  <a class="nav-link " aria-label="manage services page" href="{{ url_for('services') }}"> Manage Services</a>
                 </li>
               {% endif %}  
 
               {% if not session.user %}
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="search by region page" href="{{ url_for('regions') }}">Search By Region</a>
+                  <a class="nav-link " aria-label="search by region page" href="{{ url_for('regions') }}">Search By Region</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="search by service page" href="{{ url_for('services') }}">Search By Service</a>
+                  <a class="nav-link " aria-label="search by service page" href="{{ url_for('services') }}">Search By Service</a>
                 </li>
               {% endif %}
               <li class="nav-item dropdown">
