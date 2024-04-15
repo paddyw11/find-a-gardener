@@ -471,4 +471,8 @@ In deployment I was receiving an error relating to the greenlet plugin, it was r
 ## Code
 
 - Code Pen - Grass Footer [@Tillberger](https://codepen.io/tillberger/pen/MWqbWZJ)
-- 
+- Project Exemplar - Ludido [M. Nowak](https://github.com/mmnowak/mp3_ludido)
+
+## Thanks
+
+I would like to thank CI course cohort lead, Amy and Mentor Daniel for their encouragement.
