@@ -247,7 +247,7 @@ The website was tested on the following devices:
 ## User Story Testing
 
 
-### 1.	I want to undertand the purpose of the site on first entry.
+### 1.	I want to understand the purpose of the site on first entry.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** | **Works as expected** |
 |:-----------:|:----------:|:-------------------:|:-----------------:|:---------------------:|
@@ -259,7 +259,7 @@ The website was tested on the following devices:
 | **Feature** | **Action** | **Expected Result** | **Actual Result** | **Works as expected** |
 |:-----------:|:----------:|:-------------------:|:-----------------:|:---------------------:|
 | Navigation bar links | Click on the nav bar links | Navigates to the correct page | Navigates to the correct respective page | Yes |
-| All Gardeners button | Click on the button | All Gardeneres page opens | Navigates to the correct page | Yes |
+| All Gardeners button | Click on the button | All Gardeners page opens | Navigates to the correct page | Yes |
 | Search By Region button | Click on the button | Region page opens | Navigates to the correct page | Yes |
 | Search By Service button | Click on the button | Services page opens | Navigates to the correct page | Yes |
 | Login nav button | Click on the button | Login page opens | Navigates to the correct page | Yes |
@@ -288,7 +288,7 @@ The website was tested on the following devices:
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** | **Works as expected** |
 |:-----------:|:----------:|:-------------------:|:-----------------:|:---------------------:|
-| All Gardeners page | Click on the All Gardeners button | All Gardeners are siplayed without a filter applied | All Gardeners are listed | Yes |
+| All Gardeners page | Click on the All Gardeners button | All Gardeners are displayed without a filter applied | All Gardeners are listed | Yes |
 
 
 ### 6. I want to search for gardeners by region or by services offered.
@@ -306,7 +306,7 @@ The website was tested on the following devices:
 | **Feature** | **Action** | **Expected Result** | **Actual Result** | **Works as expected** |
 |:-----------:|:----------:|:-------------------:|:-----------------:|:---------------------:|
 | Register nav button | Click on the button | Registration page opens | Navigates to the correct page | Yes |
-| Registration Form | Complete the form and click the register button | Registration is successful and new account is created | New record added to database andSuccess message is displayed to user | Yes |
+| Registration Form | Complete the form and click the register button | Registration is successful and new account is created | New record added to database and success message is displayed to user | Yes |
 
 
 ### 8. I want to be able to locate a log in page easily.
@@ -333,7 +333,7 @@ The website was tested on the following devices:
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** | **Works as expected** |
 |:-----------:|:----------:|:-------------------:|:-----------------:|:---------------------:|
-| Flash Messages | Complete an action | Messages appears in the flash message area | Diplays message related to the action | Yes |
+| Flash Messages | Complete an action | Messages appears in the flash message area | Displays message related to the action | Yes |
 
 
 11. I want to be able to add, edit or delete regions.
@@ -353,4 +353,4 @@ The website was tested on the following devices:
 | Navigation bar links | Click on the nav bar links | Navigates to the correct page | Navigates to the correct respective page | Yes |
 | Add Service button | Click on the button | Add Service form page opens | Navigates to the correct page | Yes |
 | Edit Service button | Click on the button | Edit Service page opens | Edits the Service Profile | Yes |
-| Delete button | Click on the delete button | Delete modal opens | Deletes the Servcie | Yes |
+| Delete button | Click on the delete button | Delete modal opens | Deletes the Service | Yes |
