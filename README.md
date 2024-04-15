@@ -6,7 +6,7 @@ Find a Gardener is a website that will provide a list of available gardeners and
 
 The users of the website will be able to find gardeners in their area and find more information about them.
 
-The other user of the website will be ther garndener themselves who can create a profile to login to and can add, update or delete their information profile.
+The other user of the website will be the gardener themselves who can create a profile to login to and can add, update or delete their information profile.
 
 ### Live project
 
@@ -66,7 +66,7 @@ All users of the site will expect:
 ### User Stories
 
 As any user:
-    1. I want to undertand the purpose of the site on first entry.
+    1. I want to understand the purpose of the site on first entry.
     2. I want to be able to navigate the site easily and intuitively.
     3. I want to be able to view the website on any device.
     4. I want to be able to return to the home page without using browser buttons if I encounter an error.
@@ -242,7 +242,7 @@ Home Page
 
 #### Future Features
 
-A number of features could be added to the website in order to enhance it's business case use. For example:
+A number of features could be added to the website in order to enhance its business case use. For example:
 
 - The ability for Gardeners to be able to add their own services and determine their own price.
 - A bio section containing contact details for each gardener only accessible to logged in customers.
@@ -253,7 +253,7 @@ A number of features could be added to the website in order to enhance it's busi
 
 ### Wireframes
 
-To follow best practice, wireframes have been developed to guide the project throught it's development. Device sizes for desktop, tablet and mobile have been created for the core pages using [Balsamiq](https://balsamiq.com/)
+To follow best practice, wireframes have been developed to guide the project throughout its development. Device sizes for desktop, tablet and mobile have been created for the core pages using [Balsamiq](https://balsamiq.com/)
 
 <details>
 <summary>Home Page</summary>
@@ -333,7 +333,7 @@ To follow best practice, wireframes have been developed to guide the project thr
 
 #### Color Scheme
 
-I chose a colour scheme that closely resembles the industry that the website is catagorised in, nature and gardens. Synonymous with eco and nature, green was a colour that would dominate on this website. The complimentary color to green, red, I have used to style any danger buttons for example delete. 
+I chose a colour scheme that closely resembles the industry that the website is categorised in, nature and gardens. Synonymous with eco and nature, green was a colour that would dominate on this website. The complimentary color to green, red, I have used to style any danger buttons for example delete. 
 
 ![Colour Palette](documentation/readme/color-palette.png)
 
@@ -355,7 +355,7 @@ Google Fonts Varela Rounds, Cabin and Gafata, sans serif were used across the si
 
 ## Frameworks, Libraries and Programs Used
 
-- [Github](https://github.com/) - Github has been utilised to store the repository of my project.
+- [GitHub](https://github.com/) - GitHub has been utilised to store the repository of my project.
 
 - [Gitpod](https://www.gitpod.io/) - Utilised for version control
 
@@ -371,13 +371,13 @@ Google Fonts Varela Rounds, Cabin and Gafata, sans serif were used across the si
 
 - [Font Awesome](https://fontawesome.com/) - Utilised for icons.
 
-- [Werkzeug](https://werkzeug.palletsprojects.com/) - Utilised the security helper function for passwrod hashing. 
+- [Werkzeug](https://werkzeug.palletsprojects.com/) - Utilised the security helper function for password hashing. 
 
 - [SQLAlchemy](https://www.sqlalchemy.org/) - SQLAlchemy ORM utilised for simplified database interactions.
 
 - [ElephantSQL](https://www.elephantsql.com/) - ElephantSQL cloud service utilised for hosting the PostgreSQL database.
 
-- [Balsamiq](https://balsamiq.com/) -  Balsamiq wireframing tool utilized for creating mockups to visualize the project's user interface design.
+- [Balsamiq](https://balsamiq.com/) -  Balsamiq wireframing tool utilized for creating mock-ups to visualize the project's user interface design.
 
 - [LucidChart](https://www.lucidchart.com/) - LucidChart utilised for creating database schema for clear visual representations to aid in planning and documentation for the project.
 
@@ -395,19 +395,19 @@ For More information on testing [see here](https://github.com/paddyw11/find-a-ga
 
 # Issues
 
-Region error in post add_gargener form. I realised form posts were not adding tot he database for the garderner base. I added some print statements to test how the form was functioning. Some print statemnts identified an issues at the point of identifying the selected region on the form.
+Region error in post add_gargener form. I realised form posts were not adding to the database for the gardener base. I added some print statements to test how the form was functioning. Some print statements identified an issue at the point of identifying the selected region on the form.
 
-In adding an image to the home page. Upon launching a port and after delpoyment I couldn't fathom how to ge the image to load, following the same steps from previous projects. Upon learning a server hoseted app doesn't load file in the same manner I opted to laod the image directly from its url source.
+In adding an image to the home page. Upon launching a port and after deployment I couldn't fathom how to get the image to load, following the same steps from previous projects. Upon learning a server hosted app doesn't load file in the same manner I opted to load the image directly from its URL source.
 
 
 
-In deployment I was receiving an error relating to the greenlet plugin, it was requiree I instll a newer version. 
+In deployment I was receiving an error relating to the greenlet plugin, it was required I install a newer version. 
 
 # Deployment
 
 ## Local Deployment
 
-### How this site can be forked on Github
+### How this site can be forked on GitHub
 
 1. On GitHub.com, navigate to the repository [here](https://github.com/paddyw11/find-a-gardener).
 2. In the top-right hand corner, click on 'Fork'.
@@ -440,7 +440,7 @@ In deployment I was receiving an error relating to the greenlet plugin, it was r
 
 1. Type `pip3 freeze --local > requirements.txt` into the Gitpod terminal to create a requirements.txt file.
 2. Type `echo web: python app.py > Procfile` into the terminal to create a Procfile.
-3. Commit and push the changes to Github.
+3. Commit and push the changes to GitHub.
 4. Create a Heroku Account and log in.
 5. Click 'New' -> 'Create new app'.
 6. Enter a name for your project and select your region.
@@ -453,7 +453,7 @@ In deployment I was receiving an error relating to the greenlet plugin, it was r
     * SECRET_KEY: your secret key
     * DEBUG: True
 10. Click on the 'Deploy' tab.
-11. Click 'Connect to Github'.
+11. Click 'Connect to GitHub'.
 12. Find your repo and click 'Connect'
 13. Click 'Deploy Branch'.
 14. Click 'More' -> 'Run console'
