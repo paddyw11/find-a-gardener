@@ -6,7 +6,7 @@ Find a Gardener is a website that will provide a list of available gardeners and
 
 The users of the website will be able to find gardeners in their area and find more information about them.
 
-The other user of the website will be the gardener themselves who can create a profile to login to and can add, update or delete their information profile.
+The other user of the website will be the gardener themselves who can create a profile to log in to and can add, update or delete their information profile.
 
 ### Live project
 
@@ -61,6 +61,7 @@ All users of the site will expect:
 - A simple way to create an account.
 - A simple way to log in for existing users.
 - The ability to add, edit or delete own data.
+- The security of their own profile protected by a hashed password login shield.
 - Accessibility.
 
 ### User Stories
